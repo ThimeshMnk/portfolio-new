@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #ffffff;
+
+    --bg: 8 10 15;            /* near-black */
+  --panel: 255 255 255;     /* use with opacity */
+  --text: 255 255 255;
+
+  /* accents */
+  --accent: 168 85 247;     /* purple (violet-500) */
+  --accent2: 249 115 22; 
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
+  background: rgb(var(--bg));
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-accent { color: rgb(var(--accent)); }
+.border-accent { border-color: rgb(var(--accent)); }
+.bg-accent { background-color: rgb(var(--accent)); }
+
+.text-accent2 { color: rgb(var(--accent2)); }
+.border-accent2 { border-color: rgb(var(--accent2)); }
+.bg-accent2 { background-color: rgb(var(--accent2)); }
+
+/* Nice background glow you can reuse */
+.bg-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(600px 400px at 20% 20%, rgba(var(--accent), 0.22), transparent 65%),
+    radial-gradient(700px 450px at 80% 70%, rgba(var(--accent2), 0.18), transparent 65%),
+    radial-gradient(900px 600px at 50% 100%, rgba(59, 130, 246, 0.08), transparent 70%);
+  filter: blur(6px);
 }
