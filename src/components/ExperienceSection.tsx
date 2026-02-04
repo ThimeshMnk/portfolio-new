@@ -26,9 +26,9 @@ const ITEMS: Item[] = [
   {
     type: "Education",
     title: "BSc (Hons) in Information Technology (Software Engineering)",
-    org: "Sri Lanka Institute / University (add exact name)",
+    org: "Sri Lanka Institute of Information Technology / SLIIT",
     location: "Sri Lanka",
-    period: "2018 – 2022",
+    period: "2020 – 2024",
     points: [
       "Focused on software engineering fundamentals, databases, and web development.",
       "Completed projects involving full-stack applications and system design.",
