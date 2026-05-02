@@ -72,7 +72,7 @@ export default function Navbar() {
             </button>
           ))}
 
-          {/* underline */}
+         
           <div className="absolute -bottom-3 left-0 right-0 h-0.5 bg-white/10">
             <div
               className="h-0.5 bg-mint transition-all duration-300"

@@ -35,9 +35,8 @@ const slideRight: Variants = {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-black overflow-hidden">
-      {/* Background image with gentle floating/parallax */}
       <motion.div
-        className="absolute inset-0 z-[0] pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -56,12 +55,10 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-linear-to-l from-black via-black/60 to-transparent" />
       </motion.div>
 
-      {/* Animated glow blobs */}
-<div className="absolute inset-0 z-[1] pointer-events-none">
+<div className="absolute inset-0 z-1 pointer-events-none">
         <motion.div
           className="absolute -top-40 -left-40 h-130 w-130 rounded-full blur-3xl"
           style={{ background: "rgba(var(--accent), 0.18)" }}
@@ -79,14 +76,12 @@ export default function Hero() {
       <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center py-24">
         <div className="hidden lg:block" />
 
-        {/* Staggered content */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
           className="flex flex-col gap-8 md:gap-12"
         >
-          {/* Badge + Name */}
           <motion.div variants={slideRight}>
             <motion.div
               variants={item}
@@ -107,7 +102,7 @@ export default function Hero() {
 
             <motion.h1
               variants={item}
-              className="text-6xl md:text-8xl lg:text-9xl font-black bg-linear-to-r from-[rgb(var(--accent))] to-[rgb(var(--accent2))] bg-clip-text text-transparent leading-[0.85] tracking-tighter"
+              className="text-6xl md:text-8xl lg:text-8xl font-black bg-linear-to-r from-[rgb(var(--accent))] to-[rgb(var(--accent2))] bg-clip-text text-transparent leading-[0.85] tracking-tighter"
             >
               Thimesh <br />
               <span className="block">Madhusanka</span>
@@ -130,7 +125,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Value proposition */}
           <motion.div variants={item} className="max-w-xl">
             <motion.h2
               variants={item}
@@ -151,7 +145,6 @@ export default function Hero() {
               technologies.
             </motion.p>
 
-            {/* CTAs */}
             <motion.div variants={item} className="flex flex-wrap gap-5">
               <motion.button
                 whileHover={{ y: -2 }}

@@ -25,7 +25,7 @@ export default function ProjectModal({
     <AnimatePresence>
       {open && project && (
         <>
-          {/* Backdrop */}
+         
           <motion.div
             className="fixed inset-0 z-80 bg-black/70 backdrop-blur-sm"
             initial={{ opacity: 0 }}
@@ -34,7 +34,7 @@ export default function ProjectModal({
             onClick={onClose}
           />
 
-          {/* Modal */}
+  
           <motion.div
             className="fixed inset-0 z-90 flex items-center justify-center p-4"
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
@@ -45,7 +45,7 @@ export default function ProjectModal({
               className="w-full max-w-3xl rounded-3xl border border-white/10 bg-[#0b0f14] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header */}
+           
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
@@ -61,9 +61,9 @@ export default function ProjectModal({
                 </button>
               </div>
 
-              {/* Content */}
+          
               <div className="p-6 md:p-8 grid md:grid-cols-5 gap-6">
-                {/* Left: Cover */}
+            
                 <div className="md:col-span-2">
                   <div className="h-44 md:h-full rounded-2xl border border-white/10 bg-linear-to-br from-gray-800 to-gray-900 overflow-hidden relative">
                     <div
@@ -71,7 +71,6 @@ export default function ProjectModal({
                       aria-hidden
                     />
                     {project.imageSrc ? (
-                      // keep it simple - background image (works without next/image config)
                       <div
                         className="absolute inset-0 bg-cover bg-center opacity-90"
                         style={{ backgroundImage: `url(${project.imageSrc})` }}
@@ -83,11 +82,9 @@ export default function ProjectModal({
                   </div>
                 </div>
 
-                {/* Right: Text */}
                 <div className="md:col-span-3">
                   <p className="text-gray-300 leading-relaxed">{project.description}</p>
 
-                  {/* Tags */}
                   <div className="flex gap-2 flex-wrap mt-5">
                     {project.tags.map((t) => (
                       <span
@@ -99,7 +96,6 @@ export default function ProjectModal({
                     ))}
                   </div>
 
-                  {/* Details bullets */}
                   {project.details?.length ? (
                     <ul className="mt-6 space-y-2 text-gray-400 text-sm">
                       {project.details.map((d, idx) => (
@@ -111,7 +107,6 @@ export default function ProjectModal({
                     </ul>
                   ) : null}
 
-                  {/* CTA */}
                   <div className="mt-8 flex items-center gap-3">
                     <a
                       href={project.link}
@@ -132,7 +127,6 @@ export default function ProjectModal({
                 </div>
               </div>
 
-              {/* Footer strip */}
               <div className="px-6 py-4 border-t border-white/10 text-xs text-gray-500">
                 Tip: Click outside the modal or press the Close button to dismiss.
               </div>
